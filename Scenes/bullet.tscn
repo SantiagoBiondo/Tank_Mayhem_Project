@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://uis40jx5l2go"]
+
+[ext_resource type="Script" uid="uid://dqweautxlaa1s" path="res://Scenes/bullet.gd" id="1_oduel"]
+[ext_resource type="Texture2D" uid="uid://bfrvuqenjc0mx" path="res://assets/PNG/Effects/Light_Shell.png" id="1_xjght"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_oduel"]
+radius = 6.0
+height = 28.0
+
+[node name="bullet" type="Area2D"]
+z_index = 1
+script = ExtResource("1_oduel")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5707964
+texture = ExtResource("1_xjght")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_oduel")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

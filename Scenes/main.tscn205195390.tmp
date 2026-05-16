@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://1yw0nb32qqva"]
+
+[ext_resource type="PackedScene" uid="uid://dmma162kqguru" path="res://Scenes/player.tscn" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://dvinj2qw0eqpp" path="res://Scenes/canon_hull.tscn" id="2_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bd8myq2bbwbb2" path="res://Scenes/cannon.tscn" id="3_kry3j"]
+[ext_resource type="PackedScene" uid="uid://y45bw6qtlty" path="res://Scenes/enviroment.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://5uj2gxucfpe1" path="res://Scenes/shot_effect.tscn" id="4_kry3j"]
+
+[node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_8gbba")]
+z_index = 2
+position = Vector2(800, 450)
+collision_layer = 0
+
+[node name="canon_hull" parent="Player" instance=ExtResource("2_jjvhh")]
+position = Vector2(-34.1333, 0)
+scale = Vector2(3.33333, 3.33333)
+collision_layer = 0
+
+[node name="cannon" parent="Player/canon_hull" instance=ExtResource("3_kry3j")]
+position = Vector2(32.835, 0)
+collision_layer = 0
+
+[node name="Shot_effect" parent="Player/canon_hull/cannon" instance=ExtResource("4_kry3j")]
+position = Vector2(23.4051, -1.00001)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+
+[node name="Timer2" type="Timer" parent="Player/canon_hull/cannon"]
+one_shot = true
+autostart = true
+
+[node name="enviroment" parent="." instance=ExtResource("4_jjvhh")]
+
+[connection signal="timeout" from="Player/canon_hull/cannon/Timer2" to="Player/canon_hull" method="_on_timer_2_timeout"]

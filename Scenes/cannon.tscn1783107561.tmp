@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bd8myq2bbwbb2"]
+
+[ext_resource type="Texture2D" uid="uid://o3onjay0ovxv" path="res://assets/PNG/Weapon_Color_A/Gun_01_A.png" id="1_i10un"]
+[ext_resource type="Script" uid="uid://qihtkk4yr5kj" path="res://Scenes/cannon.gd" id="1_qlvt6"]
+[ext_resource type="PackedScene" uid="uid://uis40jx5l2go" path="res://Scenes/bullet.tscn" id="2_3uv2y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23j6s"]
+size = Vector2(29, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qayxd"]
+size = Vector2(4, 10)
+
+[node name="cannon" type="CharacterBody2D"]
+script = ExtResource("1_qlvt6")
+Bullet = ExtResource("2_3uv2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_i10un")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_23j6s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(-15, 0)
+shape = SubResource("RectangleShape2D_qayxd")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(16, 0)
+
+[node name="Timer" type="Timer" parent="."]

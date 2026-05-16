@@ -1,0 +1,237 @@
+[gd_scene load_steps=5 format=3 uid="uid://y45bw6qtlty"]
+
+[ext_resource type="Texture2D" uid="uid://c0parvyph13to" path="res://assets/PNG/Hedges/Hedge_A_01.png" id="1_ks4c7"]
+[ext_resource type="Texture2D" uid="uid://cla2qk52d6mrp" path="res://assets/PNG/Hedges/Hedge_A_02.png" id="2_0evto"]
+[ext_resource type="Texture2D" uid="uid://cnuq45h4drc2y" path="res://assets/PNG/Tiles/Ground_Tile_01_A.png" id="3_rw8p7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ks4c7"]
+
+[node name="enviroment" type="Node2D"]
+
+[node name="HedgeA01" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 128)
+texture = ExtResource("1_ks4c7")
+
+[node name="HedgeA02" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(384, 128)
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA03" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(640, 128)
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA04" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(896, 128)
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA05" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1152, 128)
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA06" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1472, 128)
+rotation = 1.5708
+texture = ExtResource("1_ks4c7")
+
+[node name="HedgeA07" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1216, 128)
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA08" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 768)
+rotation = 3.14159
+texture = ExtResource("1_ks4c7")
+flip_h = true
+
+[node name="HedgeA09" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1472, 768)
+rotation = 3.14159
+texture = ExtResource("1_ks4c7")
+
+[node name="HedgeA10" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(384, 768)
+rotation = 3.14159
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA11" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(640, 768)
+rotation = 3.14159
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA12" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(896, 768)
+rotation = 3.14159
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA13" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1152, 768)
+rotation = 3.14159
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA14" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1224, 768)
+rotation = 3.14159
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA15" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1472, 384)
+rotation = 1.5708
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA16" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1472, 568)
+rotation = 1.5708
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA17" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 384)
+rotation = 4.71239
+texture = ExtResource("2_0evto")
+
+[node name="HedgeA18" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(128, 512)
+rotation = 4.71239
+texture = ExtResource("2_0evto")
+
+[node name="GroundTile01A" type="Sprite2D" parent="."]
+position = Vector2(128, 128)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A2" type="Sprite2D" parent="."]
+position = Vector2(128, 384)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A3" type="Sprite2D" parent="."]
+position = Vector2(128, 640)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A4" type="Sprite2D" parent="."]
+position = Vector2(128, 760)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A5" type="Sprite2D" parent="."]
+position = Vector2(1472.26, 144.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A6" type="Sprite2D" parent="."]
+position = Vector2(1472.26, 400.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A7" type="Sprite2D" parent="."]
+position = Vector2(1472.26, 656.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A8" type="Sprite2D" parent="."]
+position = Vector2(1472.26, 776.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A9" type="Sprite2D" parent="."]
+position = Vector2(384.258, 128.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A10" type="Sprite2D" parent="."]
+position = Vector2(384.258, 384.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A11" type="Sprite2D" parent="."]
+position = Vector2(384.258, 640.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A12" type="Sprite2D" parent="."]
+position = Vector2(384.258, 760.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A13" type="Sprite2D" parent="."]
+position = Vector2(640.258, 144.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A14" type="Sprite2D" parent="."]
+position = Vector2(640.258, 400.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A15" type="Sprite2D" parent="."]
+position = Vector2(640.258, 656.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A16" type="Sprite2D" parent="."]
+position = Vector2(640.258, 776.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A17" type="Sprite2D" parent="."]
+position = Vector2(896.258, 144.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A18" type="Sprite2D" parent="."]
+position = Vector2(896.258, 400.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A19" type="Sprite2D" parent="."]
+position = Vector2(896.258, 656.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A20" type="Sprite2D" parent="."]
+position = Vector2(896.258, 776.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A21" type="Sprite2D" parent="."]
+position = Vector2(1152.26, 144.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A22" type="Sprite2D" parent="."]
+position = Vector2(1152.26, 400.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A23" type="Sprite2D" parent="."]
+position = Vector2(1152.26, 656.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A24" type="Sprite2D" parent="."]
+position = Vector2(1152.26, 776.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A25" type="Sprite2D" parent="."]
+position = Vector2(1408.26, 144.258)
+rotation = 0.0020157
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A26" type="Sprite2D" parent="."]
+position = Vector2(1408.26, 400.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A27" type="Sprite2D" parent="."]
+position = Vector2(1408.26, 656.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="GroundTile01A28" type="Sprite2D" parent="."]
+position = Vector2(1408.26, 776.258)
+texture = ExtResource("3_rw8p7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ks4c7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(216, 24, 152, 40, 104, 64, 64, 104, 40, 160, 24, 200, 24, 704, 48, 768, 88, 824, 160, 864, 232, 880, 232, 872, 1400, 872, 1464, 856, 1520, 808, 1568, 744, 1576, 688, 1576, 192, 1544, 120, 1504, 72, 1440, 40, 1384, 24, 224, 24, 224, 0, 1600, 0, 1600, 904, 0, 896, 0, 0, 224, 0, 224, 24)
