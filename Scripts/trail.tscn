@@ -25,6 +25,8 @@ func _process(delta):
 func _physics_process(delta):
 	point = get_parent().global_position
 	add_point(point)
+	if points.size() > 25:
+		remove_point(0)
 "
 
 [node name="trail" type="Line2D"]

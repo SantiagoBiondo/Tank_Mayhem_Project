@@ -14,6 +14,7 @@ size = Vector2(236.667, 46.6667)
 size = Vector2(193.333, 60)
 
 [sub_resource type="Gradient" id="Gradient_vgqql"]
+offsets = PackedFloat32Array(0.9910714, 1)
 
 [sub_resource type="Gradient" id="Gradient_6t5aa"]
 
@@ -42,9 +43,11 @@ position = Vector2(-113.333, -60)
 
 [node name="trail" parent="trailPos1" instance=ExtResource("3_6t5aa")]
 gradient = SubResource("Gradient_vgqql")
+texture_mode = 2
 
 [node name="trailPos2" type="Marker2D" parent="."]
 position = Vector2(-113.333, 56.6667)
 
 [node name="trail" parent="trailPos2" instance=ExtResource("3_6t5aa")]
 gradient = SubResource("Gradient_6t5aa")
+texture_mode = 2

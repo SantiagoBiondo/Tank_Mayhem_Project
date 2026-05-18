@@ -1,10 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://y45bw6qtlty"]
+[gd_scene load_steps=7 format=3 uid="uid://y45bw6qtlty"]
 
 [ext_resource type="Texture2D" uid="uid://c0parvyph13to" path="res://assets/PNG/Hedges/Hedge_A_01.png" id="1_ks4c7"]
 [ext_resource type="Texture2D" uid="uid://cla2qk52d6mrp" path="res://assets/PNG/Hedges/Hedge_A_02.png" id="2_0evto"]
 [ext_resource type="Texture2D" uid="uid://cnuq45h4drc2y" path="res://assets/PNG/Tiles/Ground_Tile_01_A.png" id="3_rw8p7"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ks4c7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks4c7"]
+size = Vector2(24, 896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0evto"]
+size = Vector2(1595, 24)
 
 [node name="enviroment" type="Node2D"]
 
@@ -230,8 +236,39 @@ texture = ExtResource("3_rw8p7")
 position = Vector2(1408.26, 776.258)
 texture = ExtResource("3_rw8p7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="Map_Limits" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_ks4c7")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(216, 24, 152, 40, 104, 64, 64, 104, 40, 160, 24, 200, 24, 704, 48, 768, 88, 824, 160, 864, 232, 880, 232, 872, 1400, 872, 1464, 856, 1520, 808, 1568, 744, 1576, 688, 1576, 192, 1544, 120, 1504, 72, 1440, 40, 1384, 24, 224, 24, 224, 0, 1600, 0, 1600, 904, 0, 896, 0, 0, 224, 0, 224, 24)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Map_Limits"]
+position = Vector2(12, 448)
+shape = SubResource("RectangleShape2D_ks4c7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Map_Limits"]
+position = Vector2(1584, 448)
+shape = SubResource("RectangleShape2D_ks4c7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Map_Limits"]
+position = Vector2(800, 16)
+shape = SubResource("RectangleShape2D_0evto")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Map_Limits"]
+position = Vector2(797.5, 884)
+shape = SubResource("RectangleShape2D_0evto")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map_Limits"]
+polygon = PackedVector2Array(0, 0, 0, 200, 32, 200, 48, 144, 72, 104, 112, 64, 168, 40, 200, 32, 200, 0)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Map_Limits"]
+position = Vector2(1600, 0)
+rotation = 1.5707941
+polygon = PackedVector2Array(0, 0, 0, 200, 32, 200, 48, 144, 72, 104, 112, 64, 168, 40, 200, 32, 200, 0)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Map_Limits"]
+position = Vector2(1600, 896)
+rotation = 3.1415882
+polygon = PackedVector2Array(0, 0, 0, 200, 32, 200, 48, 144, 72, 104, 112, 64, 168, 40, 200, 32, 200, 0)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Map_Limits"]
+position = Vector2(0, 896)
+rotation = 4.7123823
+polygon = PackedVector2Array(0, 0, 0, 200, 32, 200, 48, 144, 72, 104, 112, 64, 168, 40, 200, 32, 200, 0)
