@@ -1,2 +1,5 @@
+res://Scenes/cannon.tscn
+res://Scenes/cannon.gd
+res://Scenes/Reload_Visual.gd
 res://Scenes/player.tscn
 res://Scripts/trail.tscn

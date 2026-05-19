@@ -1,14 +1,54 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd8myq2bbwbb2"]
+[gd_scene load_steps=13 format=3 uid="uid://bd8myq2bbwbb2"]
 
 [ext_resource type="Texture2D" uid="uid://o3onjay0ovxv" path="res://assets/PNG/Weapon_Color_A/Gun_01_A.png" id="1_i10un"]
 [ext_resource type="Script" uid="uid://qihtkk4yr5kj" path="res://Scenes/cannon.gd" id="1_qlvt6"]
 [ext_resource type="PackedScene" uid="uid://uis40jx5l2go" path="res://Scenes/bullet.tscn" id="2_3uv2y"]
+[ext_resource type="Texture2D" uid="uid://b7wwakus2sgsy" path="res://assets/SCML/Fire_Shots/Flash_A_01.png" id="4_vxj2g"]
+[ext_resource type="Texture2D" uid="uid://bdppqlhpbj4pf" path="res://assets/SCML/Fire_Shots/Flash_A_02.png" id="5_g8i8a"]
+[ext_resource type="Texture2D" uid="uid://baanllogkdslm" path="res://assets/SCML/Fire_Shots/Flash_A_03.png" id="6_t1e62"]
+[ext_resource type="Texture2D" uid="uid://bncrluhmrvgox" path="res://assets/SCML/Fire_Shots/Flash_A_04.png" id="7_vhcm6"]
+[ext_resource type="Texture2D" uid="uid://cyoc5m8ltts1w" path="res://assets/SCML/Fire_Shots/Flash_A_05.png" id="8_6t7p5"]
+[ext_resource type="Script" uid="uid://bx0ogasf3s1rf" path="res://Scenes/Reload_Visual.gd" id="9_g8i8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23j6s"]
 size = Vector2(29, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qayxd"]
 size = Vector2(4, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nmjqw"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"no_shoting",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vxj2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g8i8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_t1e62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vhcm6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6t7p5")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"shot_effect",
+"speed": 10.0
+}]
 
 [node name="cannon" type="CharacterBody2D"]
 script = ExtResource("1_qlvt6")
@@ -32,3 +72,24 @@ shape = SubResource("RectangleShape2D_qayxd")
 
 [node name="Muzzle" type="Marker2D" parent="."]
 position = Vector2(16, 0)
+
+[node name="Shoot_effect" type="AnimatedSprite2D" parent="Muzzle"]
+position = Vector2(8.000001, 0)
+rotation = 1.5647849
+scale = Vector2(-0.24524507, 0.1740342)
+sprite_frames = SubResource("SpriteFrames_nmjqw")
+animation = &"shot_effect"
+frame = 6
+frame_progress = 1.0
+
+[node name="Reload_Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="ReloadWheel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_g8i8a")
+
+[connection signal="timeout" from="Reload_Timer" to="." method="_on_reload_timer_timeout"]

@@ -9,6 +9,9 @@ func _ready():
 
 
 func _process(delta):
+	Movement(delta)
+
+func Movement(delta):
 	var direction = 0.0
 	var rotation_dir = 0.0
 	
