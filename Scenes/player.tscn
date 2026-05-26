@@ -7,11 +7,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(236.667, 46.6667)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
-size = Vector2(236.667, 46.6667)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
 size = Vector2(193.333, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
+size = Vector2(236.667, 46.6667)
 
 [sub_resource type="Gradient" id="Gradient_vgqql"]
 offsets = PackedFloat32Array(0.9910714, 1)
@@ -20,23 +20,24 @@ offsets = PackedFloat32Array(0.9910714, 1)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.3, 0.3)
+collision_mask = 8
 script = ExtResource("1_v0iea")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 texture = ExtResource("2_cvnsp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Left_Wheel" type="CollisionShape2D" parent="."]
 position = Vector2(0, -56.6667)
 shape = SubResource("RectangleShape2D_vgqql")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 56.6667)
-shape = SubResource("RectangleShape2D_fkybt")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+[node name="Cockpit" type="CollisionShape2D" parent="."]
 position = Vector2(-16.6667, 0)
 shape = SubResource("RectangleShape2D_x3wgy")
+
+[node name="Right_Wheel" type="CollisionShape2D" parent="."]
+position = Vector2(0, 56.6667)
+shape = SubResource("RectangleShape2D_fkybt")
 
 [node name="trailPos1" type="Marker2D" parent="."]
 position = Vector2(-113.333, -60)
@@ -49,3 +50,6 @@ position = Vector2(-113.333, 56.6667)
 
 [node name="trail" parent="trailPos2" instance=ExtResource("3_6t5aa")]
 gradient = SubResource("Gradient_6t5aa")
+
+[node name="Mine_Throw_Position" type="Marker2D" parent="."]
+position = Vector2(-156.66666, 0)
