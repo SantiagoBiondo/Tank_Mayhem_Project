@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=3 uid="uid://dvcuwyqhr705k"]
 
 [ext_resource type="Texture2D" uid="uid://7d3i22gb0iak" path="res://assets/PNG/Bombs/Sprites/Bomb_Idle_A_000.png" id="1_ocymv"]
-[ext_resource type="Script" uid="uid://c82elr35nl6eb" path="res://Scenes/mine_1.gd" id="1_yo047"]
+[ext_resource type="Script" uid="uid://c82elr35nl6eb" path="res://Scripts/mine_1.gd" id="1_yo047"]
 [ext_resource type="Texture2D" uid="uid://c1dnrlxcfdlwt" path="res://assets/PNG/Bombs/Explosion_A_01.png" id="2_jbsqx"]
 [ext_resource type="Texture2D" uid="uid://ds0g6fxulxplp" path="res://assets/PNG/Bombs/Sprites/Bomb_Idle_A_001.png" id="2_ncfhf"]
 [ext_resource type="Texture2D" uid="uid://cbt1oi8bifakx" path="res://assets/PNG/Bombs/Explosion_A_02.png" id="3_lin6d"]
@@ -20,6 +20,9 @@
 [ext_resource type="Texture2D" uid="uid://ctwilhfsqdqrc" path="res://assets/PNG/Bombs/Sprites/Bomb_Triggering_A_001.png" id="18_ii10j"]
 [ext_resource type="Texture2D" uid="uid://citjj8ospbp6k" path="res://assets/PNG/Bombs/Sprites/Bomb_Triggering_A_002.png" id="19_skbk4"]
 [ext_resource type="Texture2D" uid="uid://b2k5igboh2lat" path="res://assets/PNG/Bombs/Sprites/Bomb_Triggering_A_003.png" id="20_n8h8j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbsqx"]
+radius = 48.01302
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_yo047"]
 animations = [{
@@ -96,25 +99,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_jbsqx"]
-radius = 48.01302
-
-[node name="Mine_1" type="Area2D"]
+[node name="Mine_1" type="StaticBody2D"]
 collision_layer = 8
 script = ExtResource("1_yo047")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, -1)
+shape = SubResource("CircleShape2D_jbsqx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_yo047")
 animation = &"Mine_Idle"
 frame_progress = 0.039020125
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -1)
-shape = SubResource("CircleShape2D_jbsqx")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

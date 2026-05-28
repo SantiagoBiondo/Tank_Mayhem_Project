@@ -1,16 +1,15 @@
 extends Area2D
 
 
-var active = false  # prevents self-triggering on spawn
+var active = false
 
 func _ready() -> void:
 	$AnimatedSprite2D.play("Mine_Idle")
-	# wait a moment before the mine can be triggered
 	await get_tree().create_timer(0.5).timeout
 	active = true
 
 func _on_body_entered(body: Node2D) -> void:
-	print("body entered: ", body.name)  # add this
+	print("body entered: ", body.name)
 	if not active:
 		print("mine not active yet")
 		return
@@ -21,6 +20,5 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	$AnimatedSprite2D.play("Mine_Explotion")
-	# wait for explosion animation to finish before freeing
 	await $AnimatedSprite2D.animation_finished
 	queue_free()

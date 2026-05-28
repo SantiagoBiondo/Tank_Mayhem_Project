@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ba4a2tdxm5s3i" path="res://Scripts/player.gd" id="1_v0iea"]
 [ext_resource type="Texture2D" uid="uid://cf5oe5bcugoln" path="res://assets/PNG/Hulls_Color_A/Hull_01.png" id="2_cvnsp"]
-[ext_resource type="PackedScene" uid="uid://c5gknpkyhr1q4" path="res://Scripts/trail.tscn" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://c5gknpkyhr1q4" path="res://Scenes/trail.tscn" id="3_6t5aa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vgqql"]
 size = Vector2(236.667, 46.6667)

@@ -1,14 +1,14 @@
 [gd_scene load_steps=13 format=3 uid="uid://bd8myq2bbwbb2"]
 
 [ext_resource type="Texture2D" uid="uid://o3onjay0ovxv" path="res://assets/PNG/Weapon_Color_A/Gun_01_A.png" id="1_i10un"]
-[ext_resource type="Script" uid="uid://qihtkk4yr5kj" path="res://Scenes/cannon.gd" id="1_qlvt6"]
+[ext_resource type="Script" uid="uid://qihtkk4yr5kj" path="res://Scripts/cannon.gd" id="1_qlvt6"]
 [ext_resource type="PackedScene" uid="uid://uis40jx5l2go" path="res://Scenes/bullet.tscn" id="2_3uv2y"]
 [ext_resource type="Texture2D" uid="uid://b7wwakus2sgsy" path="res://assets/SCML/Fire_Shots/Flash_A_01.png" id="4_vxj2g"]
 [ext_resource type="Texture2D" uid="uid://bdppqlhpbj4pf" path="res://assets/SCML/Fire_Shots/Flash_A_02.png" id="5_g8i8a"]
 [ext_resource type="Texture2D" uid="uid://baanllogkdslm" path="res://assets/SCML/Fire_Shots/Flash_A_03.png" id="6_t1e62"]
 [ext_resource type="Texture2D" uid="uid://bncrluhmrvgox" path="res://assets/SCML/Fire_Shots/Flash_A_04.png" id="7_vhcm6"]
 [ext_resource type="Texture2D" uid="uid://cyoc5m8ltts1w" path="res://assets/SCML/Fire_Shots/Flash_A_05.png" id="8_6t7p5"]
-[ext_resource type="Script" uid="uid://bx0ogasf3s1rf" path="res://Scenes/Reload_Visual.gd" id="9_g8i8a"]
+[ext_resource type="Script" uid="uid://bx0ogasf3s1rf" path="res://Scripts/Reload_Visual.gd" id="9_g8i8a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_23j6s"]
 size = Vector2(29, 6)

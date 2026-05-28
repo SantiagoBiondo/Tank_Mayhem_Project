@@ -1,6 +1,4 @@
-res://Scenes/mine_1.gd
 res://Scenes/mine_1.tscn
-res://Scenes/player.tscn
-res://Scripts/player.gd
-res://Scenes/main.tscn
+res://Scenes/mine_1.gd
 res://Scenes/cannon.tscn
+res://Scenes/player.tscn
