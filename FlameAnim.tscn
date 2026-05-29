@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://bx6bqdcjnacyi"]
+
+[ext_resource type="Texture2D" uid="uid://b61edgryq88ws" path="res://assets/PNG/Effects/Flame_H.png" id="1_vrkq3"]
+[ext_resource type="Texture2D" uid="uid://b5iixnuoeoi4a" path="res://assets/PNG/Effects/Flame_F.png" id="2_jyv6e"]
+[ext_resource type="Texture2D" uid="uid://buakofkx013w" path="res://assets/PNG/Effects/Flame_G.png" id="3_e4p7s"]
+[ext_resource type="Texture2D" uid="uid://ccvpiuj4qhcsf" path="res://assets/PNG/Effects/Flame_E.png" id="4_cglx5"]
+[ext_resource type="Texture2D" uid="uid://bo0sqqee3mvod" path="res://assets/PNG/Effects/Flame_D.png" id="5_2bf7i"]
+[ext_resource type="Texture2D" uid="uid://b285xg8khugut" path="res://assets/PNG/Effects/Flame_C.png" id="6_olp7f"]
+[ext_resource type="Texture2D" uid="uid://d0cl4bj0ehj8k" path="res://assets/PNG/Effects/Flame_B.png" id="7_orcdm"]
+[ext_resource type="Texture2D" uid="uid://b85ocjhpxi2fv" path="res://assets/PNG/Effects/Flame_A.png" id="8_6ul1f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bethd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_vrkq3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jyv6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e4p7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cglx5")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jyv6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cglx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2bf7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_olp7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_orcdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6ul1f")
+}],
+"loop": false,
+"name": &"End",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_6ul1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_orcdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_olp7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2bf7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cglx5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jyv6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_e4p7s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_vrkq3")
+}],
+"loop": true,
+"name": &"Start",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"aNoShoot",
+"speed": 5.0
+}]
+
+[node name="FlameAnim" type="Node2D" unique_id=865463753]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1393326766]
+sprite_frames = SubResource("SpriteFrames_bethd")
+animation = &"aNoShoot"

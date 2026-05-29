@@ -1,4 +1,9 @@
+res://Scripts/mine_1.gd
 res://Scenes/mine_1.tscn
-res://Scenes/mine_1.gd
-res://Scenes/cannon.tscn
 res://Scenes/player.tscn
+res://FlameTank.gd
+res://FlameHull.tscn
+res://FlameCannon.tscn
+res://flame_cannon.gd
+res://Scenes/main.tscn
+res://FlameAnim.tscn

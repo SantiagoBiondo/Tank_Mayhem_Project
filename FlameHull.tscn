@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://4bpm00qd2fjw"]
+
+[ext_resource type="Script" uid="uid://dhk5wpr8mfubn" path="res://Scripts/canon_hull.gd" id="1_nylhe"]
+[ext_resource type="Texture2D" uid="uid://claslklcv11kx" path="res://assets/PNG/Weapon_Color_C/Gun_02_B.png" id="2_hcupi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oefns"]
+size = Vector2(48, 66)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1499365775]
+script = ExtResource("1_nylhe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=540087475]
+texture = ExtResource("2_hcupi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2124440780]
+position = Vector2(0, -23)
+shape = SubResource("RectangleShape2D_oefns")

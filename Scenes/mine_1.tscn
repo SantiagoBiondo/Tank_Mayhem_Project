@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dvcuwyqhr705k"]
+[gd_scene format=3 uid="uid://dvcuwyqhr705k"]
 
 [ext_resource type="Texture2D" uid="uid://7d3i22gb0iak" path="res://assets/PNG/Bombs/Sprites/Bomb_Idle_A_000.png" id="1_ocymv"]
 [ext_resource type="Script" uid="uid://c82elr35nl6eb" path="res://Scripts/mine_1.gd" id="1_yo047"]
@@ -42,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_hkbf6")
 }],
-"loop": true,
+"loop": false,
 "name": &"Mine_Explotion",
 "speed": 10.0
 }, {
@@ -99,23 +99,23 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Mine_1" type="StaticBody2D"]
-collision_layer = 8
+[node name="Area2D" type="Area2D" unique_id=71267160]
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_yo047")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1)
-shape = SubResource("CircleShape2D_jbsqx")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_yo047")
-animation = &"Mine_Idle"
-frame_progress = 0.039020125
-
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=507273172]
 wait_time = 2.0
 one_shot = true
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=158500113]
+position = Vector2(0.5, -1)
+shape = SubResource("CircleShape2D_jbsqx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1992552674]
+sprite_frames = SubResource("SpriteFrames_yo047")
+animation = &"Mine_Triggering"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

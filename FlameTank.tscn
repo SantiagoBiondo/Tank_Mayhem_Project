@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://uawhphrjbtlg"]
+
+[ext_resource type="Texture2D" uid="uid://07f2tw31jdu7" path="res://assets/PNG/Hulls_Color_C/Hull_02.png" id="1_jb6r8"]
+[ext_resource type="PackedScene" uid="uid://c5gknpkyhr1q4" path="res://Scenes/trail.tscn" id="2_by2vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf7vx"]
+size = Vector2(236.667, 46.6667)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nw56l"]
+size = Vector2(193.333, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rlcql"]
+size = Vector2(236.667, 46.6667)
+
+[sub_resource type="Gradient" id="Gradient_24u4u"]
+offsets = PackedFloat32Array(0.9910714, 1)
+
+[sub_resource type="Gradient" id="Gradient_3igrf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gqdwk"]
+size = Vector2(7.2398167, 156.66666)
+
+[node name="Node2D" type="CharacterBody2D" unique_id=772547054]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=56843210]
+rotation = 1.5707964
+texture = ExtResource("1_jb6r8")
+
+[node name="Left_Wheel" type="CollisionShape2D" parent="." unique_id=413957742]
+visible = false
+position = Vector2(0, -56.6667)
+shape = SubResource("RectangleShape2D_yf7vx")
+
+[node name="Cockpit" type="CollisionShape2D" parent="." unique_id=2141448711]
+visible = false
+position = Vector2(-16.6667, 0)
+shape = SubResource("RectangleShape2D_nw56l")
+
+[node name="Right_Wheel" type="CollisionShape2D" parent="." unique_id=2091012811]
+visible = false
+position = Vector2(0, 56.6667)
+shape = SubResource("RectangleShape2D_rlcql")
+
+[node name="trailPos1" type="Marker2D" parent="." unique_id=110922505]
+position = Vector2(-113.333, -60)
+
+[node name="trail" parent="trailPos1" unique_id=1610287229 instance=ExtResource("2_by2vw")]
+gradient = SubResource("Gradient_24u4u")
+
+[node name="trailPos2" type="Marker2D" parent="." unique_id=1148464288]
+position = Vector2(-113.333, 56.6667)
+
+[node name="trail" parent="trailPos2" unique_id=2066333113 instance=ExtResource("2_by2vw")]
+gradient = SubResource("Gradient_3igrf")
+
+[node name="Mine_Throw_Position" type="Marker2D" parent="." unique_id=819073580]
+position = Vector2(-156.66666, 0)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1154124937]
+scale = Vector2(14.733337, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=503172171]
+position = Vector2(2.0361984, -1.6666669)
+shape = SubResource("RectangleShape2D_gqdwk")
